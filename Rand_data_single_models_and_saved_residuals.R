@@ -25,7 +25,7 @@ rm(list=ls())
 
 ## read and visualize the data
 
-df1<-read.csv('Class/Ar/DEXSFUS.csv')
+df1<-read.csv('DEXSFUS.csv')
 head(df1)
 tail(df1)
 df1$DEXSFUS<-as.numeric(df1$DEXSFUS)
@@ -115,11 +115,11 @@ for_tes1<-forecast(fit_tes1,h=20)
 ### The forecast is therefore performed based on the test data.
 
 ##Arima
-d_ar1<-forecast(test1,model = fit_ar1,h = 20)
+d_ar1<-forecast(test1,model = fit_ar1)
 summary(d_ar1)
 
 ##ES
-d_es1<-forecast(test1,model = fit_es1,h =20)
+d_es1<-forecast(test1,model = fit_es1)
 summary(d_es1)
 
 ##SSA-LRF
@@ -195,7 +195,7 @@ Rand <-data.frame(fit_arim1,fit_esp1,fit_lrf1,res_arim1,res_esp1,res_lrf1,
 merge_1<- cbind(df1, Rand)
 head(merge_1)
 
-write.csv(merge_1, "Class/Ar/data_final_Rand.csv", row.names = FALSE)
+write.csv(merge_1, "data_final_Rand.csv", row.names = FALSE)
 
 # Creation of the DataFrame Considering the Short-Term Daily Forecasting Approach of the 20-Day Forecasting Models
 
@@ -227,5 +227,5 @@ Rand_ <-data.frame(dfit_arim1,dfit_esp1,dfit_lrf1,dres_arim1,dres_esp1,dres_lrf1
 merge_1<- cbind(df1, Rand_)
 head(merge_1)
 
-write.csv(merge_1, "Class/Ar/data_final_day_Rand.csv", row.names = FALSE)
+write.csv(merge_1, "data_final_day_Rand.csv", row.names = FALSE)
 
