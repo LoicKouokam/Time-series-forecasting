@@ -164,8 +164,8 @@ summary(dfit_tar1)
 summary(dfit_tes1)
 
 # Forecasting 
-d_tar1<-forecast(ra$F1[2068:2087],model=dfit_tar1,h =20)
-d_tes1<-forecast(ra$F1[2068:2087],model=dfit_tes1,h=20)
+d_tar1<-forecast(ra$F1[2068:2087],model=dfit_tar1)
+d_tes1<-forecast(ra$F1[2068:2087],model=dfit_tes1)
 
 
 ###We save each model and its residuals for further analysis in python
